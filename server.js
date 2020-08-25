@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require('path');
+const publicPath = path.join(__dirname, '..', 'public');
 
 // use Port provided by heroku or if none provided use Port 3000
 const PORT = process.env.PORT || 3000;
