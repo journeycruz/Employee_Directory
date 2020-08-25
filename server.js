@@ -1,19 +1,32 @@
+const {
+    createServer
+} = require('http');
 const express = require("express");
 const path = require('path');
+const morgan = require('morgan');
+const compression = require('compression');
 
-// use Port provided by heroku or if none provided use Port 3000
-const PORT = process.env.PORT || 3000;
+const normalizPort = port => parseInt(port, 10);
+const PORT = normalizPort(process.env.PORT || 3000);
 
 const app = express();
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.disable('x-powered-by')
+app.use(compression())
+app.use(morgan('common'))
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.static(path.resolve(__dirname, 'build')))
 
-app.use(express.static("public"));
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
+})
 
-app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}!`);
+
+
+const server = createServer(app)
+
+server.listen(PORT, err => {
+    if (err) throw err;
+
+    console.log('Server started');
 });
