@@ -1,26 +1,26 @@
-import React from 'react';
+import React, { Component } from "react";
+import { JsonToTable } from "react-json-to-table";
+import ReactDOM from "react-dom";
 import logo from './logo.svg';
 import './App.css';
+import Wrapper from "./components/Wrapper";
+import Employees from "./Employees.json";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <div className="App">
+        <h1>Employee Directory</h1>
+        <h5>Listed Below Are Your Current Employees</h5>
+        <br />
+        <JsonToTable json={ Employees } />
+      </div>
+    </Wrapper>
   );
 }
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 
 export default App;
