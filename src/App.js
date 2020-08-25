@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { JsonToTable } from "react-json-to-table";
 import ReactDOM from "react-dom";
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Wrapper from "./components/Wrapper";
 import Employees from "./Employees.json";
