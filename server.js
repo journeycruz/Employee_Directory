@@ -14,6 +14,11 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+// serve index.html file
+app.get('*', (req, res) => {
+    res.sendFile(path.join(publicPath, 'index.html'));
+ });
+
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
