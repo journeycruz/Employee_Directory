@@ -11,19 +11,19 @@ const PORT = normalizPort(process.env.PORT || 3000);
 
 const app = express();
 
-app.disable('x-powered-by')
-app.use(compression())
-app.use(morgan('common'))
+app.disable('x-powered-by');
+app.use(compression());
+app.use(morgan('common'));
 
-app.use(express.static(path.resolve(__dirname, 'build')))
+app.use(express.static(path.resolve(__dirname, 'build')));
 
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
-})
+});
 
 
 
-const server = createServer(app)
+const server = createServer(app);
 
 server.listen(PORT, err => {
     if (err) throw err;
