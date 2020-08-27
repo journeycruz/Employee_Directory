@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { JsonToTable } from "react-json-to-table";
+//import { JsonToTable } from "react-json-to-table";
 import "./style.css";
 import { Table } from "react-bootstrap";
 
@@ -14,7 +14,7 @@ class EmployeeTable extends Component {
     }
 
     componentDidMount() {
-        fetch("https://randomuser.me/api/?results=5000")
+        fetch("https://randomuser.me/api/?results=50")
             .then((response) => response.json())
             .then((response) => this.setState({
                 items: response.results,
@@ -31,35 +31,29 @@ class EmployeeTable extends Component {
         }
         else {
             return (
-                <Table striped bordered hover>
-                <thead>
-                    <tr>
-                    <th>Picture</th>
-                    <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    </tr>
-                    <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    </tr>
-                    <tr>
-                    <td>3</td>
-                    <td colSpan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                    </tr>
-                </tbody>
-                </Table>
+                <div className="container">
+                    
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                            <th>Picture</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Location</th>
+                            </tr>
+                        </thead>
+                        {items.map(item => (
+                            <tbody>
+                                <tr>
+                                    <td><img src={item.picture.medium} alt={item.name.first} /></td>
+                                    <td>{item.location.street.number}</td>
+                                    <td>{item.name.first}&nbsp;{item.name.last}</td>
+                                    <td>{item.location.city},&nbsp;{item.location.state}</td>
+                                </tr>
+                            </tbody>
+                        ))}
+                    </Table>
+                </div>
                 )
             }
         }
