@@ -10,16 +10,15 @@ function SearchForm(props) {
         <input
           value={props.search}
           onChange={props.handleInputChange}
-          name="term"
-          list="term"
+          name="search"
           type="text"
           className="form-control"
           placeholder="Type to start searching"
           id="nameInput"
         />&nbsp;
-        <button id="searchButton" type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
+        {/*<button id="searchButton" type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
           Search
-        </button>
+        </button>*/}
       </div>
     </form>
   );

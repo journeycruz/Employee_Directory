@@ -1,5 +1,4 @@
 import React from "react";
-import { JsonToTable } from "react-json-to-table";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import SearchForm from "./components/SearchForm";
@@ -7,7 +6,7 @@ import SearchForm from "./components/SearchForm";
 import './App.css';
 import Navbar from "./components/Navbar";
 import Wrapper from "./components/Wrapper";
-import Employees from "./Employees.json";
+import EmployeeTable from "./components/EmployeeTable.js";
 
 function App() {
 
@@ -23,7 +22,7 @@ function App() {
         <Wrapper>
           <div className="App">
             <br />
-            <JsonToTable json={ Employees } />
+            <EmployeeTable />
           </div>
           </Wrapper>
         </div>
