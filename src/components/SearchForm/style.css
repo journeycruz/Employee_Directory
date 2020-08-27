@@ -1,0 +1,15 @@
+form.search {
+    overflow: auto;
+}
+
+form.search button[type="submit"] {
+    float: right;
+}
+
+#formLabel {
+    padding-right: 5px;
+}
+
+.form-inline {
+    padding-top: 1.5rem;
+}

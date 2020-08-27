@@ -2,6 +2,7 @@ import React from "react";
 import { JsonToTable } from "react-json-to-table";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
+import SearchForm from "./components/SearchForm";
 // import logo from './logo.svg';
 import './App.css';
 import Navbar from "./components/Navbar";
@@ -14,10 +15,13 @@ function App() {
     <Router>
       <div>
         <Navbar />
+        <div className="row">
+          <div className="col-md-12">
+            <SearchForm /> 
+          </div>
+        </div>
         <Wrapper>
           <div className="App">
-            <h1>Employee Directory</h1>
-            <h5>Listed Below Are Your Current Employees</h5>
             <br />
             <JsonToTable json={ Employees } />
           </div>
