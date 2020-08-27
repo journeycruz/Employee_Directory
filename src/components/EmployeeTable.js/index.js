@@ -14,7 +14,7 @@ class EmployeeTable extends Component {
     }
 
     componentDidMount() {
-        fetch("https://randomuser.me/api/?results=50")
+        fetch("https://randomuser.me/api/?results=20")
             .then((response) => response.json())
             .then((response) => this.setState({
                 items: response.results,
@@ -39,6 +39,7 @@ class EmployeeTable extends Component {
                             <th>Picture</th>
                             <th>ID</th>
                             <th>Name</th>
+                            <th>Email</th>
                             <th>Location</th>
                             </tr>
                         </thead>
@@ -48,6 +49,7 @@ class EmployeeTable extends Component {
                                     <td><img src={item.picture.medium} alt={item.name.first} /></td>
                                     <td>{item.location.street.number}</td>
                                     <td>{item.name.first}&nbsp;{item.name.last}</td>
+                                    <td>{item.email}</td>
                                     <td>{item.location.city},&nbsp;{item.location.state}</td>
                                 </tr>
                             </tbody>
