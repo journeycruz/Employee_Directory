@@ -12,4 +12,5 @@ form.search button[type="submit"] {
 
 .form-inline {
     padding-top: 1.5rem;
+    width: 100%;
 }
