@@ -5,7 +5,7 @@ import "./style.css";
 function SearchForm(props) {
   return (
     <form className="search">
-      <div className="form-inline  justify-content-center">
+      <div className="form-inline justify-content-center">
         <label htmlFor="language" id="formLabel">Find Employee:</label>
         <input
           value={props.search}

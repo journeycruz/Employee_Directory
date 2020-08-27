@@ -15,7 +15,7 @@ function App() {
     <Router>
       <div>
         <Navbar />
-        <div className="row">
+        <div className="row mr-0">
           <div className="col-md-12">
             <SearchForm /> 
           </div>
