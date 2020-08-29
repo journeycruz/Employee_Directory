@@ -78,14 +78,15 @@ class EmployeeTable extends Component {
                     {/*<button id="searchButton" type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
                     Search
                     </button>*/}
-                </div>
+                        </div>
+                        <br />
                 </form>
                     <Table striped bordered hover>
                         <thead>
                             <tr>
                             <th>Picture</th>
                             <th>ID #</th>
-                            <th>Name<button id="arrow" onClick={e => this.onSort(e, 'name.lastAsc')}><i className="fas fa-sort-amount-down-alt"></i></button><button id="arrow" onClick={e => this.onSort(e, 'name.lastDesc')}><i className="fas fa-sort-up"></i></button></th>
+                            <th>Name<button id="arrow" onClick={e => this.onSort(e, 'name.lastAsc')}><i className="fas fa-sort-down"></i></button><button id="arrow" onClick={e => this.onSort(e, 'name.lastDesc')}><i className="fas fa-sort-up"></i></button></th>
                             <th>Email<button id="arrow" onClick={e => this.onSort(e, 'emailAsc')}><i className="fas fa-sort-down"></i></button><button id="arrow" onClick={e => this.onSort(e, 'emailDesc')}><i className="fas fa-sort-up"></i></button></th>
                             <th>Location (City, State)</th>
                             </tr>
