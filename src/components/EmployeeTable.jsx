@@ -24,14 +24,20 @@ class EmployeeTable extends Component {
 
     onSort(event, sortKey) {
         const items = this.state.items;
-        // items.sort((a, b) => a[sortKey].localeCompare(b[sortKey]))
         switch (sortKey) {
-            case "name.first": 
-                items.sort((a, b) => a.name.first.localeCompare(b.name.first))
-            
+            case "name.lastAsc": 
+                items.sort((a, b) => a.name.last.localeCompare(b.name.last))
                 break;
-        
             default:
+                break;
+            case "name.lastDesc":
+                items.sort((b, a) => a.name.last.localeCompare(b.name.last))
+                break;
+            case "emailAsc":
+                items.sort((a, b) => a.email.localeCompare(b.email))
+                break;
+            case "emailDesc":
+                items.sort((b, a) => a.email.localeCompare(b.email))
                 break;
         }
         this.setState({items})
@@ -52,8 +58,8 @@ class EmployeeTable extends Component {
                             <tr>
                             <th>Picture</th>
                             <th>ID #</th>
-                            <th onClick={e => this.onSort(e, 'name.first')}>Name</th>
-                            <th>Email</th>
+                            <th>Name<button id="arrow" onClick={e => this.onSort(e, 'name.lastAsc')}><i className="fas fa-sort-amount-down-alt"></i></button><button id="arrow" onClick={e => this.onSort(e, 'name.lastDesc')}><i className="fas fa-sort-up"></i></button></th>
+                            <th>Email<button id="arrow" onClick={e => this.onSort(e, 'emailAsc')}><i className="fas fa-sort-down"></i></button><button id="arrow" onClick={e => this.onSort(e, 'emailDesc')}><i className="fas fa-sort-up"></i></button></th>
                             <th>Location (City, State)</th>
                             </tr>
                         </thead>
