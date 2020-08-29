@@ -58,7 +58,7 @@ class EmployeeTable extends Component {
         else {
             let filteredEmployees = items.filter(
                 (items) => {
-                    return items.name.last.indexOf(this.state.search) !== -1;
+                    return items.name.first.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1; 
                 }
             );
             return (
@@ -79,6 +79,7 @@ class EmployeeTable extends Component {
                     Search
                     </button>*/}
                         </div>
+                        <br />
                         <br />
                 </form>
                     <Table striped bordered hover>
