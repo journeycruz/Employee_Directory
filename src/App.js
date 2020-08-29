@@ -2,11 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import SearchForm from "./components/SearchForm";
-// import logo from './logo.svg';
 import './App.css';
 import Navbar from "./components/Navbar";
-import Wrapper from "./components/Wrapper";
-import EmployeeTable from "./components/EmployeeTable.js";
+import Wrapper from "./components/Wrapper.jsx";
+import EmployeeTable from "./components/EmployeeTable.jsx";
 
 function App() {
 
