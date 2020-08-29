@@ -9,6 +9,7 @@ class EmployeeTable extends Component {
         this.state = {
             items: [],
             loading: false,
+            search: '',
         }
         this.onSort = this.onSort.bind(this)
     }
@@ -43,6 +44,10 @@ class EmployeeTable extends Component {
         this.setState({items})
     }
 
+    updateSearch(event) {
+        this.setState({ search: event.target.value.substr(0, 20) });
+    }
+
     render() {
         var { items, loading } = this.state;
         if (!loading) {
@@ -51,8 +56,30 @@ class EmployeeTable extends Component {
             )
         }
         else {
+            let filteredEmployees = items.filter(
+                (items) => {
+                    return items.name.last.indexOf(this.state.search) !== -1;
+                }
+            );
             return (
                 <div className="container">
+                    <form className="search">
+                <div className="form-inline justify-content-center">
+                    <label htmlFor="language" id="formLabel">Find Employee:</label>
+                    <input
+                    value={this.state.search}
+                    onChange={this.updateSearch.bind(this)}
+                    name="search"
+                    type="text"
+                    className="form-control"
+                    placeholder="Type to start searching"
+                    id="nameInput"
+                    />&nbsp;
+                    {/*<button id="searchButton" type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
+                    Search
+                    </button>*/}
+                </div>
+                </form>
                     <Table striped bordered hover>
                         <thead>
                             <tr>
@@ -63,7 +90,7 @@ class EmployeeTable extends Component {
                             <th>Location (City, State)</th>
                             </tr>
                         </thead>
-                        {items.map(item => (
+                        {filteredEmployees.map(item => (
                             <tbody>
                                 <tr>
                                     <td><img src={item.picture.medium} alt={item.name.first} /></td>
