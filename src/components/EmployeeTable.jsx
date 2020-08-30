@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
 import { Table } from "react-bootstrap";
+import { css } from "emotion";
+
+const arrow = css`
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;      
+  }`
 
 
 class EmployeeTable extends Component {
@@ -65,7 +74,7 @@ class EmployeeTable extends Component {
                 <div className="container">
                     <form className="search">
                 <div className="form-inline justify-content-center">
-                    <label htmlFor="language" id="formLabel">Find Employee:</label>
+                    <label htmlFor="language" id="formLabel">Find Employee:&nbsp;</label>
                     <input
                     value={this.state.search}
                     onChange={this.updateSearch.bind(this)}
@@ -87,8 +96,8 @@ class EmployeeTable extends Component {
                             <tr>
                             <th>Picture</th>
                             <th>ID #</th>
-                            <th>Name<button id="arrow" onClick={e => this.onSort(e, 'name.lastAsc')}><i className="fas fa-sort-down"></i></button><button id="arrow" onClick={e => this.onSort(e, 'name.lastDesc')}><i className="fas fa-sort-up"></i></button></th>
-                            <th>Email<button id="arrow" onClick={e => this.onSort(e, 'emailAsc')}><i className="fas fa-sort-down"></i></button><button id="arrow" onClick={e => this.onSort(e, 'emailDesc')}><i className="fas fa-sort-up"></i></button></th>
+                            <th>Name&nbsp;<button className={arrow} onClick={e => this.onSort(e, 'name.lastAsc')}><i className="fas fa-sort-alpha-down"></i></button><button className={arrow} onClick={e => this.onSort(e, 'name.lastDesc')}><i className="fas fa-sort-alpha-down-alt"></i></button></th>
+                            <th>Email&nbsp;<button className={arrow} onClick={e => this.onSort(e, 'emailAsc')}><i className="fas fa-sort-alpha-down"></i></button><button className={arrow} onClick={e => this.onSort(e, 'emailDesc')}><i className="fas fa-sort-alpha-down-alt"></i></button></th>
                             <th>Location (City, State)</th>
                             </tr>
                         </thead>
