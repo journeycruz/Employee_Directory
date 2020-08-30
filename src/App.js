@@ -18,7 +18,7 @@ function App() {
             {/* <SearchForm />  */}
           </div>
         </div>
-        <div className="row">
+        <div className="row mr-0">
           <div className="col-md-12">
             <Wrapper>
               <div className="App">
