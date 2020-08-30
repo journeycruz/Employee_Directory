@@ -1,5 +1,7 @@
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import logo from "./logo.svg";
+
 
 const Footer = () => {
   return (
@@ -11,9 +13,12 @@ const Footer = () => {
               How it works:
             </h5>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
+              This web application makes a call to the Random User API to recieve user data and populate a responsive Bootstrap table. The table data can then be sorted and filtered by manipulating the properties saved to the components state.
             </p>
+            <br />
+            <div>
+                Powered By:&nbsp; ReactJS<img src={logo} className="App-logo" alt="logo" />
+            </div>
           </MDBCol>
           <hr className="clearfix w-100 d-md-none" />
           <MDBCol md="2">

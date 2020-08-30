@@ -6,10 +6,10 @@ const navbar = css`
     color: white;
     background-color: #323741;
     border-bottom: 3px solid #A60311;
-    height: 12rem;
+    height: 10rem;
   }
   .navbar-brand {
-    font-size: xxx-large;
+    font-size: xx-large;
   }
 `
 
