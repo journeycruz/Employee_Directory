@@ -18,12 +18,16 @@ function App() {
             {/* <SearchForm />  */}
           </div>
         </div>
-        <Wrapper>
-          <div className="App">
-            <br />
-            <EmployeeTable />
+        <div className="row">
+          <div className="col-md-12">
+            <Wrapper>
+              <div className="App">
+                <br />
+                <EmployeeTable />
+              </div>
+            </Wrapper>
           </div>
-          </Wrapper>
+        </div>
         </div>
     </Router>
   );

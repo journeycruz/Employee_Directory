@@ -91,7 +91,7 @@ class EmployeeTable extends Component {
                         <br />
                         <br />
                 </form>
-                    <Table striped bordered hover>
+                    <Table responsive striped bordered hover>
                         <thead>
                             <tr>
                             <th>Picture</th>
