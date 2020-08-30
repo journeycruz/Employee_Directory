@@ -5,13 +5,13 @@ function Wrapper(props) {
 
   const wrapper = css`
     padding-top: 50px;
-    padding-right: 0px;
     height: 100%;
     flex-flow: row wrap;
     padding: 20px;
     justify-content: space-around;
     align-content: flex-start;
     overflow: auto;
+    border-bottom: 2px solid red;
   }`
 
   return <div className={wrapper}>{props.children}</div>;

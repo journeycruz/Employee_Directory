@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-// import SearchForm from "./components/SearchForm";
 import './App.css';
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar.jsx";
 import Wrapper from "./components/Wrapper.jsx";
 import EmployeeTable from "./components/EmployeeTable.jsx";
+import Footer from "./components/Footer.jsx"
 
 function App() {
 
@@ -14,12 +14,9 @@ function App() {
       <div>
         <Navbar />
         <div className="row mr-0">
-          <div className="col-md-12">
-            {/* <SearchForm />  */}
-          </div>
         </div>
         <div className="row mr-0">
-          <div className="col-md-12">
+          <div className="col-md-12 pr-0">
             <Wrapper>
               <div className="App">
                 <br />
@@ -28,7 +25,8 @@ function App() {
             </Wrapper>
           </div>
         </div>
-        </div>
+      </div>
+      <Footer />
     </Router>
   );
 }

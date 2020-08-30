@@ -6,9 +6,10 @@ const arrow = css`
     background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
+    outline: none
     cursor:pointer;
     overflow: hidden;      
-  }`
+`
 
 
 class EmployeeTable extends Component {

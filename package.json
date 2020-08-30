@@ -10,6 +10,7 @@
     "compression": "^1.7.4",
     "emotion": "^10.0.27",
     "express": "^4.17.1",
+    "mdbreact": "^4.27.0",
     "morgan": "^1.10.0",
     "path": "^0.12.7",
     "react": "^16.13.1",
